@@ -1,0 +1,356 @@
+@import 'tailwindcss';
+
+/* Industrial Horror Theme - One Less Choice */
+:root {
+  --background: #050505;
+  --foreground: #d1d1d1;
+  --card: #0a0a0a;
+  --card-foreground: #d1d1d1;
+  --primary: #8b0000;
+  --primary-foreground: #d1d1d1;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #d1d1d1;
+  --muted: #1a1a1a;
+  --muted-foreground: #6b6b6b;
+  --accent: #8b0000;
+  --accent-foreground: #d1d1d1;
+  --border: #2a2a2a;
+  --input: #1a1a1a;
+  --ring: #8b0000;
+  --radius: 0.25rem;
+}
+
+@theme inline {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+.crt-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+.grain-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  30% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(360deg);
+  }
+  40% {
+    transform: translate(2px, 2px);
+  }
+  50% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+  52% { opacity: 1; }
+  54% { opacity: 0.9; }
+  56% { opacity: 1; }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+.flicker {
+  animation: flicker 4s infinite;
+}
+
+.blood-glow {
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.3), 0 0 40px rgba(139, 0, 0, 0.1);
+}
+
+.blood-glow-text {
+  text-shadow: 0 0 10px rgba(139, 0, 0, 0.5), 0 0 20px rgba(139, 0, 0, 0.3);
+}
+
+/* Terminal cursor */
+.terminal-cursor::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: #8b0000;
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow: 0 0 5px #8b0000, 0 0 10px #8b0000, 0 0 20px #8b0000, 0 0 40px #ff0000;
+    box-shadow: 0 0 5px #8b0000, 0 0 10px #8b0000, 0 0 20px #8b0000;
+  }
+  50% {
+    text-shadow: 0 0 2px #8b0000, 0 0 5px #8b0000, 0 0 10px #8b0000, 0 0 20px #ff0000;
+    box-shadow: 0 0 2px #8b0000, 0 0 5px #8b0000, 0 0 10px #8b0000;
+  }
+}
+
+.neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes chromatic {
+  0% {
+    text-shadow: -2px 0 #ff0000, 2px 0 #00ffff;
+  }
+  25% {
+    text-shadow: 2px 0 #ff0000, -2px 0 #00ffff;
+  }
+  50% {
+    text-shadow: -2px 0 #00ffff, 2px 0 #ff0000;
+  }
+  75% {
+    text-shadow: 2px 0 #00ffff, -2px 0 #ff0000;
+  }
+  100% {
+    text-shadow: -2px 0 #ff0000, 2px 0 #00ffff;
+  }
+}
+
+.chromatic-hover:hover {
+  animation: chromatic 0.3s ease-in-out infinite;
+}
+
+.vignette {
+  position: relative;
+}
+.vignette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.8) 100%);
+}
+
+@keyframes blood-drip {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.blood-drip {
+  animation: blood-drip 8s linear infinite;
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake-hover:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover .card-3d-inner {
+  transform: rotateY(10deg) rotateX(5deg);
+}
+
+@keyframes smoke {
+  0% { transform: translateY(0) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-20px) scale(1.1); opacity: 0.1; }
+  100% { transform: translateY(-40px) scale(1.2); opacity: 0; }
+}
+
+/* Pulse Border */
+@keyframes pulse-border {
+  0%, 100% { border-color: rgba(139, 0, 0, 0.3); }
+  50% { border-color: rgba(139, 0, 0, 0.8); }
+}
+
+.pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+@keyframes static-noise {
+  0%, 100% { background-position: 0 0; }
+  10% { background-position: -5% -5%; }
+  20% { background-position: -10% 5%; }
+  30% { background-position: 5% -10%; }
+  40% { background-position: -5% 15%; }
+  50% { background-position: -10% 5%; }
+  60% { background-position: 15% 0%; }
+  70% { background-position: 0% 10%; }
+  80% { background-position: -15% 0%; }
+  90% { background-position: 10% 5%; }
+}
+
+.static-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  animation: static-noise 0.5s steps(10) infinite;
+}
+
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(-10px) translateX(-10px); }
+  75% { transform: translateY(-30px) translateX(5px); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  70% { transform: scale(1); }
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes scan-line {
+  0% { top: -10%; }
+  100% { top: 110%; }
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.5), transparent);
+  animation: scan-line 4s linear infinite;
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal-up {
+  animation: reveal-up 0.8s ease-out forwards;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #8b0000 0%, #ff4444 50%, #8b0000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.steam-btn {
+  background: linear-gradient(180deg, #1b2838 0%, #171a21 100%);
+  border: 1px solid #66c0f4;
+  transition: all 0.3s ease;
+}
+
+.steam-btn:hover {
+  background: linear-gradient(180deg, #2a475e 0%, #1b2838 100%);
+  box-shadow: 0 0 15px rgba(102, 192, 244, 0.3);
+}
+
+.download-btn {
+  background: linear-gradient(180deg, #4c7a34 0%, #3d6b29 100%);
+  border: 1px solid #6eb04a;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background: linear-gradient(180deg, #5c8a44 0%, #4c7a34 100%);
+  box-shadow: 0 0 20px rgba(110, 176, 74, 0.4);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8b0000;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a50000;
+}

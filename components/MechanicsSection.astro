@@ -1,0 +1,174 @@
+---
+const gameSteps = [
+  { step: "01", title: "Choose Two Signs", desc: "Select a sign for each hand" },
+  { step: "02", title: "Remove One", desc: "Eliminate one choice before reveal" },
+  { step: "03", title: "Face Your Opponent", desc: "Outplay to win the round" },
+  { step: "04", title: "Pull The Trigger", desc: "Winner chooses: self or opponent" },
+];
+---
+
+<section id="mechanics" class="relative py-32 px-4 overflow-hidden">
+  <!-- Background effects -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#080808] to-[#050505]"></div>
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b0000]/50 to-transparent"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b0000]/50 to-transparent"></div>
+  
+  <!-- Ambient red glow -->
+  <div class="absolute top-1/2 left-0 w-[300px] h-[300px] bg-[#8b0000]/5 rounded-full blur-[100px]"></div>
+  <div class="absolute top-1/2 right-0 w-[300px] h-[300px] bg-[#8b0000]/5 rounded-full blur-[100px]"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <p class="font-mono text-sm text-[#8b0000] tracking-[0.3em] uppercase mb-4">How It Works</p>
+      <h2 class="font-serif text-4xl md:text-5xl lg:text-7xl tracking-[0.1em] uppercase text-[#d1d1d1] chromatic-hover">
+        Rock-Paper-Scissors
+      </h2>
+      <h3 class="font-serif text-3xl md:text-4xl lg:text-5xl tracking-[0.15em] uppercase gradient-text mt-2">
+        Minus One
+      </h3>
+      <p class="mt-8 text-lg text-[#6b6b6b] max-w-2xl mx-auto leading-relaxed">
+        Win by playing the classic game, but with a deadly twist:{" "}
+        <span class="text-[#ff4444]">choose two signs, then remove one</span> before the reveal.
+      </p>
+    </div>
+
+    <!-- Game Steps -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+      {gameSteps.map((step) => (
+        <div class="relative p-6 border border-[#2a2a2a] bg-[#0a0a0a] hover:border-[#8b0000] hover:bg-[#8b0000]/10 transition-all duration-500 text-left group">
+          <span class="font-mono text-3xl font-bold text-[#2a2a2a] group-hover:text-[#ff4444] transition-colors">
+            {step.step}
+          </span>
+          <h4 class="font-serif text-lg mt-2 text-[#6b6b6b] group-hover:text-[#d1d1d1] transition-colors">
+            {step.title}
+          </h4>
+          <p class="font-mono text-xs text-[#4a4a4a] mt-1">{step.desc}</p>
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#8b0000] via-[#ff0000] to-[#8b0000] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Cards Visualization -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+      <!-- Rock -->
+      <div class="relative card-3d group">
+        <div class="card-3d-inner relative bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a] border border-[#2a2a2a] p-8 md:p-10 hover:border-[#8b0000] hover:shadow-[0_0_30px_rgba(139,0,0,0.3)] transition-all duration-300">
+          <div class="w-28 h-28 mx-auto mb-6">
+            <svg viewBox="0 0 80 80" class="w-full h-full" aria-hidden="true">
+              <defs>
+                <radialGradient id="rockGrad" cx="40%" cy="40%">
+                  <stop offset="0%" stop-color="#666"/>
+                  <stop offset="100%" stop-color="#333"/>
+                </radialGradient>
+              </defs>
+              <circle cx="40" cy="40" r="28" fill="url(#rockGrad)"/>
+              <ellipse cx="35" cy="35" rx="10" ry="8" fill="#555" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-3xl tracking-[0.1em] uppercase text-center mb-4 text-[#8b0000] group-hover:text-[#ff4444] transition-colors">
+            Rock
+          </h3>
+          <p class="text-sm text-[#6b6b6b] text-center tracking-wide leading-relaxed">
+            Crushes Scissors. Crumbles to Paper.
+          </p>
+          <!-- Corner accents -->
+          <div class="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#8b0000]/30"></div>
+          <div class="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#8b0000]/30"></div>
+          <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#8b0000]/30"></div>
+          <div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#8b0000]/30"></div>
+        </div>
+        <div class="absolute -top-4 -left-4 w-10 h-10 bg-[#8b0000] flex items-center justify-center rotate-12">
+          <span class="font-mono text-sm text-white font-bold">01</span>
+        </div>
+      </div>
+
+      <!-- Paper -->
+      <div class="relative card-3d group">
+        <div class="card-3d-inner relative bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a] border border-[#2a2a2a] p-8 md:p-10 hover:border-[#8b0000] hover:shadow-[0_0_30px_rgba(139,0,0,0.3)] transition-all duration-300">
+          <div class="w-28 h-28 mx-auto mb-6">
+            <svg viewBox="0 0 80 80" class="w-full h-full" aria-hidden="true">
+              <defs>
+                <linearGradient id="paperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f5f5f5"/>
+                  <stop offset="100%" stop-color="#ccc"/>
+                </linearGradient>
+              </defs>
+              <rect x="15" y="10" width="50" height="60" rx="2" fill="url(#paperGrad)"/>
+              <line x1="22" y1="22" x2="58" y2="22" stroke="#aaa" stroke-width="1"/>
+              <line x1="22" y1="32" x2="58" y2="32" stroke="#aaa" stroke-width="1"/>
+              <line x1="22" y1="42" x2="50" y2="42" stroke="#aaa" stroke-width="1"/>
+              <line x1="22" y1="52" x2="55" y2="52" stroke="#aaa" stroke-width="1"/>
+              <polygon points="50,10 65,25 50,25" fill="#bbb"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-3xl tracking-[0.1em] uppercase text-center mb-4 text-[#d1d1d1] group-hover:text-white transition-colors">
+            Paper
+          </h3>
+          <p class="text-sm text-[#6b6b6b] text-center tracking-wide leading-relaxed">
+            Smothers Rock. Shredded by Scissors.
+          </p>
+          <!-- Corner accents -->
+          <div class="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#8b0000]/30"></div>
+          <div class="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#8b0000]/30"></div>
+          <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#8b0000]/30"></div>
+          <div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#8b0000]/30"></div>
+        </div>
+        <div class="absolute -top-4 -left-4 w-10 h-10 bg-[#8b0000] flex items-center justify-center rotate-12">
+          <span class="font-mono text-sm text-white font-bold">02</span>
+        </div>
+      </div>
+
+      <!-- Scissors -->
+      <div class="relative card-3d group">
+        <div class="card-3d-inner relative bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a] border border-[#2a2a2a] p-8 md:p-10 hover:border-[#8b0000] hover:shadow-[0_0_30px_rgba(139,0,0,0.3)] transition-all duration-300">
+          <div class="w-28 h-28 mx-auto mb-6">
+            <svg viewBox="0 0 80 80" class="w-full h-full" aria-hidden="true">
+              <defs>
+                <linearGradient id="scissorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#888"/>
+                  <stop offset="100%" stop-color="#444"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="25" cy="20" rx="10" ry="10" fill="none" stroke="url(#scissorGrad)" stroke-width="3"/>
+              <ellipse cx="25" cy="60" rx="10" ry="10" fill="none" stroke="url(#scissorGrad)" stroke-width="3"/>
+              <line x1="33" y1="25" x2="65" y2="40" stroke="url(#scissorGrad)" stroke-width="4" stroke-linecap="round"/>
+              <line x1="33" y1="55" x2="65" y2="40" stroke="url(#scissorGrad)" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="45" cy="40" r="3" fill="#666"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-3xl tracking-[0.1em] uppercase text-center mb-4 text-[#4a90d9] group-hover:text-[#66c0f4] transition-colors">
+            Scissors
+          </h3>
+          <p class="text-sm text-[#6b6b6b] text-center tracking-wide leading-relaxed">
+            Cuts Paper. Broken by Rock.
+          </p>
+          <!-- Corner accents -->
+          <div class="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#8b0000]/30"></div>
+          <div class="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#8b0000]/30"></div>
+          <div class="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#8b0000]/30"></div>
+          <div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#8b0000]/30"></div>
+        </div>
+        <div class="absolute -top-4 -left-4 w-10 h-10 bg-[#8b0000] flex items-center justify-center rotate-12">
+          <span class="font-mono text-sm text-white font-bold">03</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rule box -->
+    <div class="text-center">
+      <div class="inline-block px-10 py-6 border border-[#8b0000]/50 bg-gradient-to-r from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a] relative">
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b0000] to-transparent"></div>
+        <p class="font-mono text-base text-[#d1d1d1] tracking-wide">
+          <span class="text-[#ff4444] font-bold">RULE:</span> Draw = Both gain a card.{" "}
+          <span class="text-[#ff4444] font-bold">Lose</span> = You know what happens.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom tagline -->
+    <p class="mt-16 text-center text-xl tracking-[0.15em] uppercase text-[#4a4a4a] font-serif">
+      "Every round, one less option. Every choice, one step closer to the end."
+    </p>
+  </div>
+</section>

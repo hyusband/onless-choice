@@ -1,0 +1,133 @@
+---
+const gameImages = [
+  {
+    src: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/4193250/ss_d3f66dc68e65aec52aef10c4b87939b5c9b8b0fd.600x338.jpg",
+    alt: "One Less Choice - Gameplay Screenshot 1",
+    caption: "Face your opponent across the table",
+  },
+  {
+    src: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/4193250/ss_e60c31f3c8e8cb5f14f247a1cbcf5e3fc5ee1b2c.600x338.jpg",
+    alt: "One Less Choice - Gameplay Screenshot 2",
+    caption: "Choose your signs wisely",
+  },
+  {
+    src: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/4193250/ss_92b8e7a60e1c0f85fb5c9d5fdff43bfe15e9a0b5.600x338.jpg",
+    alt: "One Less Choice - Gameplay Screenshot 3",
+    caption: "The revolver awaits",
+  },
+  {
+    src: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/4193250/ss_fb3a1f0d5b3a8fdc1a8c8c2d2e3f4a5b6c7d8e9f.600x338.jpg",
+    alt: "One Less Choice - Gameplay Screenshot 4",
+    caption: "Cards can change everything",
+  },
+];
+
+const features = [
+  {
+    title: "Psychological Horror",
+    description: "Every decision weighs on your mind as tension builds with each round.",
+  },
+  {
+    title: "Strategic Depth",
+    description: "Rock-Paper-Scissors Minus One adds layers of mind games and prediction.",
+  },
+  {
+    title: "Card Powers",
+    description: "Gain cards that can alter the game state, affect your opponent, or change the revolver.",
+  },
+  {
+    title: "Multiple Endings",
+    description: "Your choices determine your fate. Will you escape or become another victim?",
+  },
+];
+---
+
+<section id="gallery" class="relative py-32 px-4 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#080505] to-[#050505]"></div>
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#8b0000]/30 to-transparent"></div>
+  
+  <div class="absolute top-1/4 right-0 w-[400px] h-[400px] bg-[#8b0000]/5 rounded-full blur-[120px]"></div>
+  <div class="absolute bottom-1/4 left-0 w-[300px] h-[300px] bg-[#ff0000]/3 rounded-full blur-[100px]"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <div class="text-center mb-20">
+      <p class="font-mono text-sm text-[#8b0000] tracking-[0.3em] uppercase mb-4">Preview</p>
+      <h2 class="font-serif text-4xl md:text-5xl lg:text-7xl tracking-[0.1em] uppercase text-[#d1d1d1]">
+        See The Game
+      </h2>
+      <p class="mt-6 text-lg text-[#6b6b6b] max-w-2xl mx-auto">
+        A glimpse into the world of One Less Choice. Every screenshot tells a story of survival.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+      <!-- Large Featured Image -->
+      <div class="relative aspect-video bg-[#0a0a0a] border border-[#2a2a2a] overflow-hidden group">
+        <div class="scan-line"></div>
+        <img
+          src={gameImages[0].src}
+          alt={gameImages[0].alt}
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <p class="font-serif text-xl text-[#d1d1d1]">{gameImages[0].caption}</p>
+        </div>
+        
+        <div class="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-[#8b0000]"></div>
+        <div class="absolute top-0 right-0 w-10 h-10 border-t-2 border-r-2 border-[#8b0000]"></div>
+        <div class="absolute bottom-0 left-0 w-10 h-10 border-b-2 border-l-2 border-[#8b0000]"></div>
+        <div class="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-[#8b0000]"></div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        {gameImages.map((image) => (
+          <div class="relative aspect-video bg-[#0a0a0a] border border-[#2a2a2a] overflow-hidden hover:border-[#4a4a4a] transition-all duration-300 opacity-80 hover:opacity-100">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {features.map((feature) => (
+        <div class="group p-6 bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a] border border-[#2a2a2a] hover:border-[#8b0000]/50 transition-all duration-300">
+          <div class="w-14 h-14 bg-[#8b0000]/10 border border-[#8b0000]/30 flex items-center justify-center mb-4 text-[#8b0000] group-hover:bg-[#8b0000]/20 transition-all">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl text-[#d1d1d1] mb-2">{feature.title}</h3>
+          <p class="text-sm text-[#6b6b6b] leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-20 p-8 bg-[#0a0a0a] border border-[#2a2a2a]">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h3 class="font-serif text-2xl text-[#d1d1d1] mb-2">System Requirements</h3>
+          <p class="text-sm text-[#6b6b6b]">Minimum: Windows 10, i5-4670, GTX 1060, 6GB RAM</p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2 px-4 py-2 bg-[#1a1a1a] border border-[#2a2a2a]">
+            <svg class="w-5 h-5 text-[#66c0f4]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+            </svg>
+            <span class="font-mono text-xs text-[#6b6b6b]">Windows</span>
+          </div>
+          <div class="flex items-center gap-2 px-4 py-2 bg-[#1a1a1a] border border-[#2a2a2a]">
+            <span class="font-mono text-xs text-[#6b6b6b]">Single-player</span>
+          </div>
+          <div class="flex items-center gap-2 px-4 py-2 bg-[#1a1a1a] border border-[#2a2a2a]">
+            <span class="font-mono text-xs text-[#6b6b6b]">17 Languages</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

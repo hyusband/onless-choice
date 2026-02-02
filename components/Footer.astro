@@ -1,0 +1,137 @@
+---
+const footerLinks = [
+  { href: "#game", label: "The Game" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#mechanics", label: "Mechanics" },
+  { href: "#terminal", label: "Last Words" },
+  { href: "#download", label: "Download" },
+];
+---
+
+<footer class="relative py-20 px-4 border-t border-[#8b0000]/20 bg-[#030303]">
+  <!-- Background effects -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-[#8b0000]/5 rounded-full blur-[100px]"></div>
+  
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <!-- Brand Column -->
+      <div>
+        <a href="#game" class="inline-flex items-center gap-3 group">
+          <svg 
+            viewBox="0 0 100 100" 
+            class="w-10 h-10 text-[#8b0000] group-hover:text-[#ff4444] transition-colors"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <circle cx="30" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="4"/>
+            <circle cx="30" cy="50" r="4" fill="currentColor"/>
+            <rect x="50" y="45" width="45" height="10" rx="2" fill="currentColor"/>
+          </svg>
+          <div>
+            <span class="block font-serif text-2xl tracking-[0.2em] text-[#d1d1d1] group-hover:text-white transition-colors">
+              ONE LESS CHOICE
+            </span>
+            <span class="block font-mono text-xs text-[#4a4a4a] tracking-wider">
+              A PSYCHOLOGICAL HORROR GAME
+            </span>
+          </div>
+        </a>
+        <p class="mt-6 text-sm text-[#6b6b6b] leading-relaxed max-w-xs">
+          Russian Roulette meets Rock-Paper-Scissors in this deadly psychological duel. 
+          Available now on Steam.
+        </p>
+        
+        <!-- Steam Button -->
+        <a
+          href="https://store.steampowered.com/app/4193250/One_Less_Choice/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 mt-6 px-5 py-3 bg-[#1b2838] hover:bg-[#2a475e] border border-[#66c0f4]/30 text-[#66c0f4] text-sm tracking-wider uppercase transition-all"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+          View on Steam
+        </a>
+      </div>
+
+      <!-- Links Column -->
+      <div>
+        <h3 class="font-serif text-lg text-[#d1d1d1] tracking-wider mb-6">Navigation</h3>
+        <ul class="space-y-3">
+          {footerLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-sm text-[#6b6b6b] hover:text-[#d1d1d1] transition-colors tracking-wider uppercase"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Developer Column -->
+      <div>
+        <h3 class="font-serif text-lg text-[#d1d1d1] tracking-wider mb-6">Developer</h3>
+        <div>
+          <p class="font-mono text-xs text-[#4a4a4a] tracking-wider">DEVELOPED BY</p>
+          <a 
+            href="https://store.steampowered.com/developer/NaltGames"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-serif text-lg text-[#8b0000] hover:text-[#ff4444] transition-colors"
+          >
+            NaltGames
+          </a>
+        </div>
+        
+        <div class="mt-6">
+          <p class="text-sm text-[#6b6b6b] leading-relaxed">
+            Creating psychological horror experiences that challenge your mind and test your resolve.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider with gradient -->
+    <div class="h-px bg-gradient-to-r from-transparent via-[#8b0000]/30 to-transparent"></div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-12 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="font-mono text-xs text-[#4a4a4a] tracking-wider">
+        &copy; 2026 ONE LESS CHOICE. ALL RIGHTS RESERVED.
+      </p>
+      
+      <div class="flex items-center gap-6">
+        <a 
+          href="https://store.steampowered.com/privacy_agreement/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-mono text-xs text-[#4a4a4a] hover:text-[#6b6b6b] transition-colors"
+        >
+          Privacy Policy
+        </a>
+        <a 
+          href="https://store.steampowered.com/subscriber_agreement/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-mono text-xs text-[#4a4a4a] hover:text-[#6b6b6b] transition-colors"
+        >
+          Terms
+        </a>
+      </div>
+      
+      <p class="font-serif text-sm text-[#8b0000] tracking-[0.2em] uppercase animate-pulse">
+        THE TABLE AWAITS.
+      </p>
+    </div>
+
+    <!-- Easter egg - hidden message -->
+    <p class="mt-8 text-center font-mono text-[8px] text-[#1a1a1a] select-none">
+      TRUST NO ONE. THE CYLINDER NEVER LIES.
+    </p>
+  </div>
+</footer>

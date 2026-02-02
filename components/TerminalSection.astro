@@ -1,0 +1,164 @@
+---
+const lastWords = [
+  { user: "PLAYER_7291", message: "I thought I had it figured out...", timestamp: "23:41:07", status: "ELIMINATED" },
+  { user: "GHOST_HAND", message: "Never trust paper twice.", timestamp: "23:38:22", status: "ELIMINATED" },
+  { user: "REDACTED", message: "The pattern was a lie.", timestamp: "23:35:59", status: "SURVIVED" },
+  { user: "PLAYER_4458", message: "Rock. It's always rock at the end.", timestamp: "23:32:14", status: "ELIMINATED" },
+  { user: "SILENT_ONE", message: "I should have walked away.", timestamp: "23:29:47", status: "ELIMINATED" },
+  { user: "PLAYER_1122", message: "Three rounds. That's all I needed.", timestamp: "23:27:01", status: "SURVIVED" },
+  { user: "VOID_WALKER", message: "They knew. They always knew.", timestamp: "23:24:38", status: "ELIMINATED" },
+  { user: "PLAYER_8834", message: "The table remembers everything.", timestamp: "23:21:55", status: "ELIMINATED" },
+  { user: "CRIMSON_EDGE", message: "One more bullet. One more chance.", timestamp: "23:18:33", status: "SURVIVED" },
+  { user: "LOST_SOUL_99", message: "I saw the cylinder spin. I knew.", timestamp: "23:15:12", status: "ELIMINATED" },
+];
+
+const eliminated = lastWords.filter(l => l.status === "ELIMINATED").length;
+const survived = lastWords.filter(l => l.status === "SURVIVED").length;
+---
+
+<section id="terminal" class="relative py-32 px-4 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#030303] to-[#050505]"></div>
+  
+  <div class="absolute inset-0 static-bg opacity-[0.02] pointer-events-none"></div>
+  
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8b0000]/3 rounded-full blur-[100px]"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="font-mono text-sm text-[#8b0000] tracking-[0.3em] uppercase mb-4">Live Feed</p>
+      <h2 class="font-serif text-4xl md:text-5xl lg:text-7xl tracking-[0.1em] uppercase text-[#d1d1d1] chromatic-hover">
+        Last Words
+      </h2>
+      <p class="mt-6 text-lg text-[#6b6b6b] max-w-xl mx-auto">
+        Final transmissions from those who faced the table.
+      </p>
+    </div>
+
+    <div class="relative bg-[#0a0a0a] border border-[#2a2a2a] overflow-hidden shadow-2xl">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="scan-line"></div>
+      </div>
+      
+      <div class="flex items-center justify-between px-4 py-3 border-b border-[#2a2a2a] bg-gradient-to-r from-[#0d0d0d] to-[#111]">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-[#8b0000] animate-pulse"></div>
+          <div class="w-3 h-3 rounded-full bg-[#4a4a4a]"></div>
+          <div class="w-3 h-3 rounded-full bg-[#4a4a4a]"></div>
+        </div>
+        <span class="font-mono text-xs text-[#6b6b6b] tracking-wider">
+          TERMINAL://one_less_choice/last_words.log
+        </span>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#8b0000] animate-pulse"></span>
+          <span class="font-mono text-xs text-[#8b0000]">LIVE</span>
+        </div>
+      </div>
+
+      <div class="p-6 h-[500px] overflow-y-auto font-mono text-sm custom-scrollbar">
+        <div class="mb-6 space-y-1">
+          <p class="text-[#4a4a4a]">
+            <span class="text-[#8b0000]">[SYSTEM]</span> Initializing connection...
+          </p>
+          <p class="text-[#4a4a4a]">
+            <span class="text-[#8b0000]">[SYSTEM]</span> Decrypting log files...
+          </p>
+          <p class="text-[#4a4a4a]">
+            <span class="text-[#8b0000]">[SYSTEM]</span> Fetching LAST_WORDS.LOG...
+          </p>
+          <p class="text-[#66c0f4]">
+            <span class="text-[#8b0000]">[SYSTEM]</span> Connection established. Streaming live data.
+          </p>
+          <p class="text-[#ff4444]">
+            <span class="text-[#8b0000]">[WARNING]</span> Content may be disturbing. Viewer discretion advised.
+          </p>
+          <p class="mt-4 text-[#2a2a2a]">{"═".repeat(60)}</p>
+        </div>
+
+        {lastWords.map((entry) => (
+          <div class="mb-4">
+            <div class="flex flex-wrap items-start gap-x-3 gap-y-1">
+              <span class="text-[#3a3a3a] shrink-0">[{entry.timestamp}]</span>
+              <span class={entry.status === "SURVIVED" ? "text-[#66c0f4] shrink-0" : "text-[#8b0000] shrink-0"}>
+                {entry.user}
+              </span>
+              <span class={`text-xs px-2 py-0.5 shrink-0 ${
+                entry.status === "SURVIVED" 
+                  ? "bg-[#66c0f4]/10 text-[#66c0f4] border border-[#66c0f4]/30" 
+                  : "bg-[#8b0000]/10 text-[#8b0000] border border-[#8b0000]/30"
+              }`}>
+                {entry.status}
+              </span>
+            </div>
+            <p class="mt-1 text-[#d1d1d1] pl-0 md:pl-[100px]">
+              {"> "}{`"${entry.message}"`}
+            </p>
+          </div>
+        ))}
+
+        <div class="mt-6 space-y-1">
+          <p class="text-[#2a2a2a]">{"═".repeat(60)}</p>
+          <p class="text-[#4a4a4a]">
+            <span class="text-[#8b0000]">[SYSTEM]</span> End of current log segment.
+          </p>
+          <p class="text-[#ff4444] animate-pulse">
+            <span class="text-[#8b0000]">[LIVE]</span> Monitoring for new entries...
+          </p>
+        </div>
+      </div>
+
+      <div class="px-4 py-3 border-t border-[#2a2a2a] bg-gradient-to-r from-[#0d0d0d] to-[#111]">
+        <div class="flex items-center gap-2 font-mono text-sm">
+          <span class="text-[#66c0f4]">guest@one-less-choice</span>
+          <span class="text-[#4a4a4a]">:</span>
+          <span class="text-[#6b6b6b]">~$</span>
+          <span class="text-[#d1d1d1] terminal-cursor">_</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="p-4 bg-[#0a0a0a] border border-[#2a2a2a] text-center">
+        <p class="font-mono text-2xl text-[#d1d1d1]">{lastWords.length}</p>
+        <p class="font-mono text-xs text-[#4a4a4a] mt-1">ENTRIES</p>
+      </div>
+      <div class="p-4 bg-[#0a0a0a] border border-[#8b0000]/30 text-center">
+        <p class="font-mono text-2xl text-[#8b0000]">{eliminated}</p>
+        <p class="font-mono text-xs text-[#4a4a4a] mt-1">ELIMINATED</p>
+      </div>
+      <div class="p-4 bg-[#0a0a0a] border border-[#66c0f4]/30 text-center">
+        <p class="font-mono text-2xl text-[#66c0f4]">{survived}</p>
+        <p class="font-mono text-xs text-[#4a4a4a] mt-1">SURVIVED</p>
+      </div>
+      <div class="p-4 bg-[#0a0a0a] border border-[#2a2a2a] text-center">
+        <p class="font-mono text-2xl text-[#ff4444] animate-pulse">LIVE</p>
+        <p class="font-mono text-xs text-[#4a4a4a] mt-1">STATUS</p>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <p class="font-mono text-xs text-[#4a4a4a] tracking-wider">
+        CONNECTED TO: NALTGAMES_DB // UPTIME: 99.7% // LATENCY: 12ms
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #2a2a2a transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 4px;
+  }
+</style>

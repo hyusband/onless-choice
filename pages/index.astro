@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import HeroSection from '../components/HeroSection.astro';
+import GallerySection from '../components/GallerySection.astro';
+import MechanicsSection from '../components/MechanicsSection.astro';
+import TerminalSection from '../components/TerminalSection.astro';
+import DownloadSection from '../components/DownloadSection.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout title="One Less Choice - Psychological Horror Game">
+  <main class="relative min-h-screen bg-[#050505] overflow-x-hidden">
+    <Navbar />
+    <HeroSection />
+    <GallerySection />
+    <MechanicsSection />
+    <TerminalSection />
+    <DownloadSection />
+    <Footer />
+  </main>
+</Layout>
