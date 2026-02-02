@@ -1,24 +1,59 @@
 ---
+// Real images from Steam CDN
 const gameImages = [
   {
-    src: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/4193250/ss_d3f66dc68e65aec52aef10c4b87939b5c9b8b0fd.600x338.jpg",
+    src: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/6d1451f90ac5b968efbc01a9f9f3a094c0f468fe/ss_6d1451f90ac5b968efbc01a9f9f3a094c0f468fe.1920x1080.jpg?t=1769101553",
+    thumb: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/6d1451f90ac5b968efbc01a9f9f3a094c0f468fe/ss_6d1451f90ac5b968efbc01a9f9f3a094c0f468fe.116x65.jpg?t=1769101553",
     alt: "One Less Choice - Gameplay Screenshot 1",
     caption: "Face your opponent across the table",
   },
   {
-    src: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/4193250/ss_e60c31f3c8e8cb5f14f247a1cbcf5e3fc5ee1b2c.600x338.jpg",
+    src: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/db1c265a580a7aa6e0d39b84b73ece79a4a56afb/ss_db1c265a580a7aa6e0d39b84b73ece79a4a56afb.1920x1080.jpg?t=1769101553",
+    thumb: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/db1c265a580a7aa6e0d39b84b73ece79a4a56afb/ss_db1c265a580a7aa6e0d39b84b73ece79a4a56afb.116x65.jpg?t=1769101553",
     alt: "One Less Choice - Gameplay Screenshot 2",
     caption: "Choose your signs wisely",
   },
   {
-    src: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/4193250/ss_92b8e7a60e1c0f85fb5c9d5fdff43bfe15e9a0b5.600x338.jpg",
+    src: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/ca5dec1931040b8ce3287b417125b79dbbd25e9b/ss_ca5dec1931040b8ce3287b417125b79dbbd25e9b.1920x1080.jpg?t=1769101553",
+    thumb: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/ca5dec1931040b8ce3287b417125b79dbbd25e9b/ss_ca5dec1931040b8ce3287b417125b79dbbd25e9b.116x65.jpg?t=1769101553",
     alt: "One Less Choice - Gameplay Screenshot 3",
     caption: "The revolver awaits",
   },
   {
-    src: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/4193250/ss_fb3a1f0d5b3a8fdc1a8c8c2d2e3f4a5b6c7d8e9f.600x338.jpg",
+    src: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/5b52d161f0583765fb8f6eac5a37f27b8e9902ed/ss_5b52d161f0583765fb8f6eac5a37f27b8e9902ed.1920x1080.jpg?t=1769101553",
+    thumb: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/5b52d161f0583765fb8f6eac5a37f27b8e9902ed/ss_5b52d161f0583765fb8f6eac5a37f27b8e9902ed.116x65.jpg?t=1769101553",
     alt: "One Less Choice - Gameplay Screenshot 4",
     caption: "Cards can change everything",
+  },
+  {
+    src: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/e71200e65bd55393b5f9093f41e64da35922ab67/ss_e71200e65bd55393b5f9093f41e64da35922ab67.1920x1080.jpg?t=1769101553",
+    thumb: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/e71200e65bd55393b5f9093f41e64da35922ab67/ss_e71200e65bd55393b5f9093f41e64da35922ab67.116x65.jpg?t=1769101553",
+    alt: "One Less Choice - Gameplay Screenshot 5",
+    caption: "Every decision matters",
+  },
+  {
+    src: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/636e60376b97dd16c57f42980e70f572492ac576/ss_636e60376b97dd16c57f42980e70f572492ac576.1920x1080.jpg?t=1769101553",
+    thumb: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/636e60376b97dd16c57f42980e70f572492ac576/ss_636e60376b97dd16c57f42980e70f572492ac576.116x65.jpg?t=1769101553",
+    alt: "One Less Choice - Gameplay Screenshot 6",
+    caption: "Tension builds with each round",
+  },
+  {
+    src: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/94f772bb8cdd19a53b1f7d463591371e2abd09aa/ss_94f772bb8cdd19a53b1f7d463591371e2abd09aa.1920x1080.jpg?t=1769101553",
+    thumb: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/94f772bb8cdd19a53b1f7d463591371e2abd09aa/ss_94f772bb8cdd19a53b1f7d463591371e2abd09aa.116x65.jpg?t=1769101553",
+    alt: "One Less Choice - Gameplay Screenshot 7",
+    caption: "Strategic mind games",
+  },
+  {
+    src: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/8d57037fd298712d491b36095ed1ab7a9d9ab00a/ss_8d57037fd298712d491b36095ed1ab7a9d9ab00a.1920x1080.jpg?t=1769101553",
+    thumb: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/8d57037fd298712d491b36095ed1ab7a9d9ab00a/ss_8d57037fd298712d491b36095ed1ab7a9d9ab00a.116x65.jpg?t=1769101553",
+    alt: "One Less Choice - Gameplay Screenshot 8",
+    caption: "Will you survive?",
+  },
+  {
+    src: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/e50c277a849a54c23622eb1c7be8eaf957e5cca9/ss_e50c277a849a54c23622eb1c7be8eaf957e5cca9.1920x1080.jpg?t=1769101553",
+    thumb: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4193250/e50c277a849a54c23622eb1c7be8eaf957e5cca9/ss_e50c277a849a54c23622eb1c7be8eaf957e5cca9.116x65.jpg?t=1769101553",
+    alt: "One Less Choice - Gameplay Screenshot 9",
+    caption: "The table awaits",
   },
 ];
 
