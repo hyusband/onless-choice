@@ -1,4 +1,11 @@
 ---
+import { db, DownloadLink, eq } from 'astro:db';
+
+const downloadLinks = await db.select().from(DownloadLink).where(eq(DownloadLink.isActive, true)).limit(1);
+const downloadLink = downloadLinks[0] || {
+  url: 'https://store.steampowered.com/app/4193250/One_Less_Choice/',
+  description: 'Default Steam store page'
+};
 ---
 
 <section id="download" class="relative py-32 px-4 overflow-hidden">
@@ -69,8 +76,16 @@
             </div>
           </div>
 
+          {/* 
+            🔧 FOR FORKERS: To change the download link, update the database:
+            1. Run: npm run astro db push --remote (for production)
+            2. Or edit db/seed.ts and run: npm run astro db push (for local)
+            3. Update the 'url' field in the DownloadLink table
+            
+            Current link is fetched from database: {downloadLink.description}
+          */}
           <a
-            href="https://store.steampowered.com/app/4193250/One_Less_Choice/"
+            href={downloadLink.url}
             target="_blank"
             rel="noopener noreferrer"
             class="group relative w-full flex items-center justify-center gap-3 px-6 py-5 download-btn text-white glitch-hover overflow-hidden"
@@ -87,6 +102,13 @@
           <p class="mt-6 text-center font-mono text-xs text-[#4a4a4a]">
             Requires Windows 10+ and 6GB RAM
           </p>
+          
+          {/* Forker notice */}
+          <div class="mt-4 p-3 bg-[#1a1a1a] border border-[#2a2a2a] rounded">
+            <p class="text-xs text-[#6b6b6b] text-center">
+              <span class="text-[#8b0000]">📝 Forked this project?</span> Edit the download link in <code class="text-[#66c0f4]">db/seed.ts</code>
+            </p>
+          </div>
         </div>
 
         <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#8b0000] opacity-60"></div>
