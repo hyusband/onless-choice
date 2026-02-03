@@ -7,7 +7,7 @@
   "description": "OnLess Choice Landing Page",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro db push --force-reset && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
