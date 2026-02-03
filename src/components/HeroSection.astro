@@ -27,113 +27,254 @@ const tags = ["Psychological Horror", "Russian Roulette", "Card Game", "Strategy
 
   <div class="scan-line"></div>
 
-  {Array.from({ length: 20 }).map((_, i) => (
-    <div
-      class="absolute w-1 h-1 rounded-full bg-[#8b0000] opacity-60"
-      style={{
-        left: `${Math.random() * 100}%`,
-        bottom: '0',
-        animation: `float-particle 10s ease-in-out infinite`,
-        animationDelay: `${Math.random() * 5}s`,
-      }}
-    />
-  ))}
+  {
+    Array.from({ length: 20 }).map((_, i) => (
+      <div
+        class="absolute w-1 h-1 rounded-full bg-[#8b0000] opacity-60"
+        style={{
+          left: `${Math.random() * 100}%`,
+          bottom: "0",
+          animation: `float-particle 10s ease-in-out infinite`,
+          animationDelay: `${Math.random() * 5}s`,
+        }}
+      />
+    ))
+  }
 
-  <div class="absolute top-0 left-[10%] w-1 h-20 bg-gradient-to-b from-[#8b0000] to-transparent blood-drip" style="animation-delay: 0s;"></div>
-  <div class="absolute top-0 left-[25%] w-0.5 h-16 bg-gradient-to-b from-[#8b0000] to-transparent blood-drip" style="animation-delay: 2s;"></div>
-  <div class="absolute top-0 right-[15%] w-1 h-24 bg-gradient-to-b from-[#8b0000] to-transparent blood-drip" style="animation-delay: 4s;"></div>
-  <div class="absolute top-0 right-[30%] w-0.5 h-12 bg-gradient-to-b from-[#8b0000] to-transparent blood-drip" style="animation-delay: 6s;"></div>
+  <div
+    class="absolute top-0 left-[10%] w-1 h-20 bg-gradient-to-b from-[#8b0000] to-transparent blood-drip"
+    style="animation-delay: 0s;"
+  >
+  </div>
+  <div
+    class="absolute top-0 left-[25%] w-0.5 h-16 bg-gradient-to-b from-[#8b0000] to-transparent blood-drip"
+    style="animation-delay: 2s;"
+  >
+  </div>
+  <div
+    class="absolute top-0 right-[15%] w-1 h-24 bg-gradient-to-b from-[#8b0000] to-transparent blood-drip"
+    style="animation-delay: 4s;"
+  >
+  </div>
+  <div
+    class="absolute top-0 right-[30%] w-0.5 h-12 bg-gradient-to-b from-[#8b0000] to-transparent blood-drip"
+    style="animation-delay: 6s;"
+  >
+  </div>
 
-  <div class="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#8b0000]/10 rounded-full blur-[100px] animate-pulse"></div>
-  <div class="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-[#ff0000]/5 rounded-full blur-[80px] animate-pulse" style="animation-delay: 1s;"></div>
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8b0000]/5 rounded-full blur-3xl"></div>
+  <div
+    class="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-[#8b0000]/10 rounded-full blur-[100px] animate-pulse"
+  >
+  </div>
+  <div
+    class="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-[#ff0000]/5 rounded-full blur-[80px] animate-pulse"
+    style="animation-delay: 1s;"
+  >
+  </div>
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8b0000]/5 rounded-full blur-3xl"
+  >
+  </div>
 
   <div class="relative z-10 text-center max-w-5xl mx-auto">
     <!-- Revolver Icon -->
-    <div class="mb-8 opacity-0 scale-50 animate-[reveal-up_1s_ease-out_0.5s_forwards]">
-      <svg 
-        viewBox="0 0 100 60" 
+    <div
+      class="mb-8 opacity-0 scale-50 animate-[reveal-up_1s_ease-out_0.5s_forwards]"
+    >
+      <svg
+        viewBox="0 0 100 60"
         class="w-32 h-20 mx-auto text-[#8b0000] heartbeat"
         fill="currentColor"
         aria-hidden="true"
       >
-        <ellipse cx="30" cy="30" rx="20" ry="20" fill="none" stroke="currentColor" stroke-width="2"/>
-        <circle cx="30" cy="30" r="3" fill="currentColor"/>
-        <circle cx="30" cy="18" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="42" cy="24" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="42" cy="36" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="30" cy="42" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="18" cy="36" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="18" cy="24" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-        <rect x="50" y="26" width="45" height="8" rx="1" fill="currentColor" opacity="0.8"/>
-        <rect x="50" y="32" width="30" height="15" rx="2" fill="currentColor" opacity="0.6"/>
+        <ellipse
+          cx="30"
+          cy="30"
+          rx="20"
+          ry="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"></ellipse>
+        <circle cx="30" cy="30" r="3" fill="currentColor"></circle>
+        <circle
+          cx="30"
+          cy="18"
+          r="4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"></circle>
+        <circle
+          cx="42"
+          cy="24"
+          r="4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"></circle>
+        <circle
+          cx="42"
+          cy="36"
+          r="4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"></circle>
+        <circle
+          cx="30"
+          cy="42"
+          r="4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"></circle>
+        <circle
+          cx="18"
+          cy="36"
+          r="4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"></circle>
+        <circle
+          cx="18"
+          cy="24"
+          r="4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"></circle>
+        <rect
+          x="50"
+          y="26"
+          width="45"
+          height="8"
+          rx="1"
+          fill="currentColor"
+          opacity="0.8"></rect>
+        <rect
+          x="50"
+          y="32"
+          width="30"
+          height="15"
+          rx="2"
+          fill="currentColor"
+          opacity="0.6"></rect>
       </svg>
     </div>
 
-    <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] tracking-[0.15em] uppercase opacity-0 translate-y-8 animate-[reveal-up_1s_ease-out_0.5s_forwards]">
+    <h1
+      class="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] tracking-[0.15em] uppercase opacity-0 translate-y-8 animate-[reveal-up_1s_ease-out_0.5s_forwards]"
+    >
       <span class="block text-[#d1d1d1] flicker chromatic-hover">One Less</span>
-      <span class="block gradient-text neon-pulse mt-2 tracking-[0.2em]">Choice</span>
+      <span class="block gradient-text neon-pulse mt-2 tracking-[0.2em]"
+        >Choice</span
+      >
     </h1>
 
-    <p class="mt-8 md:mt-12 text-xl sm:text-2xl md:text-3xl text-[#999] font-sans tracking-wide max-w-3xl mx-auto leading-relaxed opacity-0 translate-y-4 animate-[reveal-up_1s_ease-out_1.5s_forwards]">
-      A <span class="text-[#ff4444] font-semibold">Russian Roulette</span> duel twisted with{" "}
+    <p
+      class="mt-8 md:mt-12 text-xl sm:text-2xl md:text-3xl text-[#999] font-sans tracking-wide max-w-3xl mx-auto leading-relaxed opacity-0 translate-y-4 animate-[reveal-up_1s_ease-out_1.5s_forwards]"
+    >
+      A <span class="text-[#ff4444] font-semibold">Russian Roulette</span> duel twisted
+      with{" "}
       <span class="text-[#d1d1d1]">Cards</span> and{" "}
       <span class="text-[#d1d1d1]">Rock-Paper-Scissors</span>.
     </p>
 
-    <p class="mt-6 text-lg text-[#6b6b6b] max-w-2xl mx-auto opacity-0 animate-[reveal-up_1s_ease-out_1.8s_forwards]">
-      Psychological horror where every decision leaves you with one less way out.
+    <p
+      class="mt-6 text-lg text-[#6b6b6b] max-w-2xl mx-auto opacity-0 animate-[reveal-up_1s_ease-out_1.8s_forwards]"
+    >
+      Psychological horror where every decision leaves you with one less way
+      out.
     </p>
 
-    <div class="mt-12 flex flex-wrap justify-center gap-6 md:gap-10 text-sm md:text-base tracking-[0.2em] uppercase opacity-0 animate-[reveal-up_1s_ease-out_2s_forwards]">
-      <span class="shake-hover px-4 py-2 border border-[#8b0000]/30 text-[#8b0000] hover:bg-[#8b0000]/10 transition-all cursor-default">
+    <div
+      class="mt-12 flex flex-wrap justify-center gap-6 md:gap-10 text-sm md:text-base tracking-[0.2em] uppercase opacity-0 animate-[reveal-up_1s_ease-out_2s_forwards]"
+    >
+      <span
+        class="shake-hover px-4 py-2 border border-[#8b0000]/30 text-[#8b0000] hover:bg-[#8b0000]/10 transition-all cursor-default"
+      >
         Two choices. One bullet.
       </span>
-      <span class="shake-hover px-4 py-2 border border-[#2a2a2a] text-[#6b6b6b] hover:border-[#8b0000]/50 hover:text-[#999] transition-all cursor-default">
+      <span
+        class="shake-hover px-4 py-2 border border-[#2a2a2a] text-[#6b6b6b] hover:border-[#8b0000]/50 hover:text-[#999] transition-all cursor-default"
+      >
         The table doesn't lie.
       </span>
-      <span class="shake-hover px-4 py-2 border border-[#2a2a2a] text-[#6b6b6b] hover:border-[#8b0000]/50 hover:text-[#999] transition-all cursor-default">
+      <span
+        class="shake-hover px-4 py-2 border border-[#2a2a2a] text-[#6b6b6b] hover:border-[#8b0000]/50 hover:text-[#999] transition-all cursor-default"
+      >
         Trust no one.
       </span>
     </div>
 
-    <div class="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 opacity-0 translate-y-4 animate-[reveal-up_1s_ease-out_2.3s_forwards]">
+    <div
+      class="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-10 opacity-0 translate-y-4 animate-[reveal-up_1s_ease-out_2.3s_forwards]"
+    >
       <a
         href="#download"
-        class="group relative inline-flex items-center gap-3 px-8 py-4 download-btn text-white glitch-hover z-10"
+        class="group relative inline-flex items-center gap-3 px-8 py-4 download-btn text-white glitch-hover z-10 pointer-events-auto"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+          ></path>
         </svg>
-        <span class="text-sm tracking-[0.15em] uppercase font-medium">Download Game</span>
-        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+        <span class="text-sm tracking-[0.15em] uppercase font-medium"
+          >Download Game</span
+        >
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+        >
+        </div>
       </a>
-      
+
       <a
         href="https://store.steampowered.com/app/4193250/One_Less_Choice/"
         target="_blank"
         rel="noopener noreferrer"
-        class="group relative inline-flex items-center gap-3 px-8 py-4 steam-btn text-[#66c0f4] glitch-hover z-10"
+        class="group relative inline-flex items-center gap-3 px-8 py-4 steam-btn text-[#66c0f4] glitch-hover z-10 pointer-events-auto"
       >
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/>
+        <svg
+          class="w-6 h-6"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"
+          ></path>
         </svg>
-        <span class="text-sm tracking-[0.15em] uppercase font-medium">View on Steam</span>
-        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+        <span class="text-sm tracking-[0.15em] uppercase font-medium"
+          >View on Steam</span
+        >
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+        >
+        </div>
       </a>
     </div>
 
-    <div class="mt-12 flex flex-wrap justify-center gap-2 opacity-0 animate-[reveal-up_1s_ease-out_2.6s_forwards]">
-      {tags.map((tag) => (
-        <span class="px-3 py-1 text-xs tracking-wider uppercase bg-[#1a1a1a] border border-[#2a2a2a] text-[#6b6b6b] hover:border-[#8b0000]/50 hover:text-[#999] transition-all">
-          {tag}
-        </span>
-      ))}
+    <div
+      class="mt-12 flex flex-wrap justify-center gap-2 opacity-0 animate-[reveal-up_1s_ease-out_2.6s_forwards]"
+    >
+      {
+        tags.map((tag) => (
+          <span class="px-3 py-1 text-xs tracking-wider uppercase bg-[#1a1a1a] border border-[#2a2a2a] text-[#6b6b6b] hover:border-[#8b0000]/50 hover:text-[#999] transition-all">
+            {tag}
+          </span>
+        ))
+      }
     </div>
   </div>
 
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <div class="w-8 h-14 border-2 border-[#8b0000]/50 rounded-full flex justify-center pt-3 pulse-border">
+    <div
+      class="w-8 h-14 border-2 border-[#8b0000]/50 rounded-full flex justify-center pt-3 pulse-border"
+    >
       <div class="w-1.5 h-3 bg-[#8b0000] rounded-full animate-pulse"></div>
     </div>
   </div>
